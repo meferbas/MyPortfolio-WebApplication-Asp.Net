@@ -1,0 +1,53 @@
+﻿@model List<Portfolio>
+
+<section id="works" class="s-works target-section">
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full">
+            <h3>Portfolyo</h3>
+            <h1>Son Projelerime Göz At</h1>
+
+            <p class="lead">     </p>
+        </div>
+    </div>
+
+    <div class="row masonry-wrap">
+        <div class="masonry">
+
+            @foreach(var item in Model)
+            {
+                <div class="masonry__brick">
+                    <div class="container">
+
+                       
+                        <a href="@item.Url" class="thumb-link" title="@item.Title" data-size="1050x700" target="_blank">
+                            <div class="item-folio__thumb">
+                                <img src="@item.ImageURL"
+                                     srcset="@item.ImageURL 1x, @item.ImageURL 2x" alt="@item.Description">
+                               
+                            </div>
+                        </a>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                @item.Title
+                            </h3>
+                            <p class="item-folio__cat">
+                                @item.SubTitle
+                            </p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div> 
+
+</section> 
+
+

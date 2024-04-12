@@ -1,0 +1,18 @@
+﻿@model List<MyPortfolio.DAL.Entities.Skill  >
+<div class="col-six tab-full right">
+    <h3>Yetenekler & İlgi Alanları</h3>
+
+    <ul class="skill-bars">
+        @foreach(var item in Model)
+        {
+            var progressPercentage = item.Value.ToString();
+            var progressBarClass = "progress percent" + progressPercentage;
+
+            <li>
+                <div class="@progressBarClass"><span>@item.Value%</span></div>
+                <strong>@item.Title</strong>
+            </li>
+        }
+       
+    </ul>
+</div>
