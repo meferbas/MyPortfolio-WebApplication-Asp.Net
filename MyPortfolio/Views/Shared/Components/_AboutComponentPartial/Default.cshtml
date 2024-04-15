@@ -2,20 +2,22 @@
 
 <section id="about" class="s-about target-section">
 
-    <div class="row narrow section-intro has-bottom-sep">
+    <div class="row narrow section-intro has-bottom-sep" style="font-family: 'Times New Roman', serif;">
         <div class="col-full text-center">
-            <h3>Hakkımda</h3>
-            <h1>@ViewBag.aboutTitle</h1>
-            <p class="lead">@ViewBag.aboutSubDescription</p>
+            <h3 style="font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px;">Hakkımda</h3>
+            <br />
+            <h1 style="font-family: 'Times New Roman', serif;">@ViewBag.aboutTitle</h1>
+            <p class="lead" style="font-family: 'Times New Roman', serif; font-size: 24px;">@ViewBag.aboutSubDescription</p>
         </div>
     </div>
+
 
     <div class="row about-content">
 
         <div class="col-six tab-full left">
-            <h3>Ben Kimim?</h3>
+            <h3 style="font-family: 'Times New Roman', serif; font-weight: bold;">Önyazı</h3>
 
-            <p> @ViewBag.aboutDetail </p>
+            <p style="font-family: 'Times New Roman', serif; font-size: 20px;"> @ViewBag.aboutDetail </p>
         </div>
 
         @await Component.InvokeAsync("_SkillComponentPartial")    
@@ -23,11 +25,11 @@
 
     <div class="row about-content about-content--buttons">
 
-        <div class="col-six tab-full left">
+        <div class="col-six tab-full left" style="font-family: 'Times New Roman', serif; font-weight: bold;">
             <a href="https://www.dropbox.com/scl/fi/mwcvp8u24nh0eciszd1s1/Mehmet_Efe-Erba-_CV.pdf?rlkey=zxtxpijl3ze1lne5mxitv69pt&dl=1" download="Mehmet_Efe-Erbaş_CV.pdf" class="btn btn--primary full-width">Özgeçmişim</a>
 
         </div>
-        <div class="col-six tab-full right">
+        <div class="col-six tab-full right" style="font-family: 'Times New Roman', serif; font-weight: bold;">
             <a href="mailto:mefeerbas@hotmail.com" class="btn full-width">Bana Ulaşın!</a>
         </div>
 

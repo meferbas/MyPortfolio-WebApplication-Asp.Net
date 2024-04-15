@@ -1,10 +1,7 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Layout/Index.cshtml";
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Layout/Index.cshtml";
 }
-
-<h1>Index</h1>
 
 <div class="content">
 	<div class="container-fluid">
@@ -86,4 +83,55 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Task</h4>
+				<p class="card-category">Complete</p>
+			</div>
+			<div class="card-body">
+				<div id="task-complete" class="chart-circle mt-4 mb-3"></div>
+			</div>
+			<div class="card-footer">
+				<div class="legend"><i class="la la-circle text-primary"></i> Completed</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">World Map</h4>
+				<p class="card-category">
+					Map of the distribution of users around the world
+				</p>
+			</div>
+			<div class="card-body">
+				<div class="mapcontainer">
+					<div class="map">
+						<span>Alternative content for the map</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/popper.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/bootstrap.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/ready.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/demo.js"></script>
 		

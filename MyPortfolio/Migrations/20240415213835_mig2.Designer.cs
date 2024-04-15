@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyPortfolio.DAL.Context;
 
@@ -11,9 +12,10 @@ using MyPortfolio.DAL.Context;
 namespace MyPortfolio.Migrations
 {
     [DbContext(typeof(MyPortfolioContext))]
-    partial class MyPortfolioContextModelSnapshot : ModelSnapshot
+    [Migration("20240415213835_mig2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -304,7 +306,7 @@ namespace MyPortfolio.Migrations
 
                     b.HasKey("ToDoListId");
 
-                    b.ToTable("ToDoLists");
+                    b.ToTable("toDoLists");
                 });
 #pragma warning restore 612, 618
         }
