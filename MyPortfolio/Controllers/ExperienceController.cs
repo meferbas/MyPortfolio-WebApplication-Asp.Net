@@ -32,5 +32,18 @@ namespace MyPortfolio.Controllers
             context.SaveChanges();
             return RedirectToAction("ExperienceList");
         }
+        [HttpGet]
+        public IActionResult UpdateExperience(int id)
+        {
+			var value = context.Experiences.Find(id);
+			return View(value); // Experience nesnesi UpdateExperience sayfasına gönderilir.
+		}
+        [HttpPost]
+        public IActionResult UpdateExperience(Experience experience) // Güncelleme işlemi için HttpPost metodu oluşturulur.
+        {
+            context.Experiences.Update(experience); // Update metodu ile güncelleme işlemi yapılır. 			
+			context.SaveChanges(); // Değişiklikler veritabanına kaydedilir.
+			return RedirectToAction("ExperienceList"); // ExperienceList sayfasına yönlendirme yapılır.
+		}
     }
 }
