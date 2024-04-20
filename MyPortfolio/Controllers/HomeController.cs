@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.Models;
 using System.Diagnostics;
 
 namespace MyPortfolio.Controllers
 {
+    [Authorize(Roles = "admin")]
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

@@ -1,11 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 
 namespace MyPortfolio.Controllers
 {
-	public class StatisticController : Controller
+    [Authorize(Roles = "admin")]
+
+    public class StatisticController : Controller
 	{
-		MyPortfolioContext context = new MyPortfolioContext();
+		private readonly MyPortfolioContext context;
+		public StatisticController(MyPortfolioContext _context)
+		{
+            context = _context;
+        }
 		public IActionResult Index()
 		{
 			ViewBag.v1= context.Skills.Count();

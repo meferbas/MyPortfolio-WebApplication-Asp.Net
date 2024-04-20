@@ -1,7 +1,9 @@
-﻿namespace MyPortfolio.DAL.Entities
+﻿
+namespace MyPortfolio.DAL.Entities
 {
     public class Contact
     {
+   
         public int ContactId { get; set; }
 
         public string Title { get; set; }

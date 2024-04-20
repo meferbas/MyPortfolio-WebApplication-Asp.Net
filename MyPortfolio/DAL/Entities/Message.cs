@@ -1,7 +1,9 @@
-﻿namespace MyPortfolio.DAL.Entities
+﻿
+namespace MyPortfolio.DAL.Entities
 {
     public class Message
     {
+        
         public int MessageId { get; set; }
 
         public string NameSurname { get; set; }

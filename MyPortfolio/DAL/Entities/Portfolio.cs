@@ -1,7 +1,9 @@
-﻿namespace MyPortfolio.DAL.Entities
+﻿
+namespace MyPortfolio.DAL.Entities
 {
     public class Portfolio
     {
+      
         public int PortfolioId { get; set; }
         public string Title { get; set; }
 

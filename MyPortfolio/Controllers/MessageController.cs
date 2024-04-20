@@ -1,13 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entities;
 
 namespace MyPortfolio.Controllers
 {
-	public class MessageController : Controller
+    [Authorize(Roles = "admin")]
+
+    public class MessageController : Controller
 	{
-		MyPortfolioContext context = new MyPortfolioContext();
+		private readonly MyPortfolioContext context;
+		public MessageController(MyPortfolioContext _context)
+		{
+            context = _context;
+        }
 		public IActionResult Inbox()
 		{
 			var values = context.Messages.ToList();

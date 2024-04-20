@@ -6,7 +6,12 @@ namespace MyPortfolio.ViewComponents
 {
     public class _TestimonialComponentPartial : ViewComponent
     {
-       MyPortfolioContext context = new MyPortfolioContext();
+        private readonly MyPortfolioContext context;
+
+        public _TestimonialComponentPartial(MyPortfolioContext context)
+        {
+            this.context = context;
+        }
         public IViewComponentResult Invoke()
          {
             var values = context.Testimonials.ToList();

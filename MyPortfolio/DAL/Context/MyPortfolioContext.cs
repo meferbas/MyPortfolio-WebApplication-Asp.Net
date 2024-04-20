@@ -5,9 +5,8 @@ namespace MyPortfolio.DAL.Context
 {
     public class MyPortfolioContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public MyPortfolioContext(DbContextOptions<MyPortfolioContext> options) : base(options)
         {
-            optionsBuilder.UseSqlServer("Server=MENCO\\SQLEXPRESS;initial Catalog=MyPortfolioDb;integrated Security=true;");
         }
 
         public DbSet<About> Abouts { get; set; }
@@ -20,5 +19,6 @@ namespace MyPortfolio.DAL.Context
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<ToDoList> ToDoLists { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

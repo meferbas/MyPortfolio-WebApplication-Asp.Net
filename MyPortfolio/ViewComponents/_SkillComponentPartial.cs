@@ -5,7 +5,12 @@ namespace MyPortfolio.ViewComponents
 {
     public class _SkillComponentPartial : ViewComponent
     {
-        MyPortfolioContext portfolioContext = new MyPortfolioContext();
+        private readonly MyPortfolioContext portfolioContext;
+
+        public _SkillComponentPartial (MyPortfolioContext context)
+        {
+            portfolioContext = context;
+        }
         public IViewComponentResult Invoke ()
         {
             var values = portfolioContext.Skills.ToList();

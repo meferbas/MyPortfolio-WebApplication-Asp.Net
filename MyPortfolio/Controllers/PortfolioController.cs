@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entities;
 
 namespace MyPortfolio.Controllers
 {
-	public class PortfolioController : Controller
+    [Authorize(Roles = "admin")]
+
+    public class PortfolioController : Controller
 	{
-		MyPortfolioContext context = new MyPortfolioContext();
+		private readonly MyPortfolioContext context;
+		public PortfolioController(MyPortfolioContext _context)
+		{
+            context = _context;
+        }
 		public IActionResult Index()
 		{
 			var values = context.Portfolios.ToList();

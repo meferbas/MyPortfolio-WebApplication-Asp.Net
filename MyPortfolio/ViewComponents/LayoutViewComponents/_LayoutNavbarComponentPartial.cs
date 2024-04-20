@@ -5,7 +5,12 @@ namespace MyPortfolio.ViewComponents.LayoutViewComponents
 {
 	public class _LayoutNavbarComponentPartial : ViewComponent
 	{
-		MyPortfolioContext context = new MyPortfolioContext(); // Database context
+		private readonly MyPortfolioContext context;
+
+		public _LayoutNavbarComponentPartial(MyPortfolioContext _context)
+		{
+            context = _context;
+        }
 		public IViewComponentResult Invoke()
 		{
 			var values = context.ToDoLists.Where(x => x.Status == false).ToList(); // ToDoList values

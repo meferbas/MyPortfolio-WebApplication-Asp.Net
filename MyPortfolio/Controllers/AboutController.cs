@@ -1,13 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entities;
 
 namespace MyPortfolio.Controllers
 {
-	public class AboutController : Controller
+    [Authorize(Roles = "admin")]
+
+    public class AboutController : Controller
 	{
-		MyPortfolioContext context = new MyPortfolioContext();
-		public IActionResult Index()
+        private readonly MyPortfolioContext context;
+		public AboutController(MyPortfolioContext _context)
+		{
+            context = _context;
+        }
+
+        public IActionResult Index()
 		{
 			ViewBag.aboutTitle = context.Abouts.Select(x => x.Title).FirstOrDefault();
 			ViewBag.aboutSubDescription = context.Abouts.Select(x => x.SubDescription).FirstOrDefault();
@@ -23,8 +31,8 @@ namespace MyPortfolio.Controllers
 		[HttpPost]
 		public IActionResult UpdateAbout(About about)
 		{
-			context.Abouts.Update(about);
-			context.SaveChanges();
+            context.Abouts.Update(about);
+            context.SaveChanges();
 			return RedirectToAction("Index");
 		}
 	}

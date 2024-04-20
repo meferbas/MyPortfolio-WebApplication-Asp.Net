@@ -5,7 +5,11 @@ namespace MyPortfolio.ViewComponents
 {
     public class _AboutComponentPartial : ViewComponent
     {
-        MyPortfolioContext portfolioContext = new MyPortfolioContext();
+        private readonly MyPortfolioContext portfolioContext;
+        public _AboutComponentPartial (MyPortfolioContext context)
+        {
+            portfolioContext = context;
+        }
         public IViewComponentResult Invoke ()
         {
             ViewBag.aboutTitle = portfolioContext.Abouts.Select(x => x.Title).FirstOrDefault();

@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entities;
 
 namespace MyPortfolio.Controllers
 {
-	public class ToDoListController : Controller
+    [Authorize(Roles = "admin")]
+
+    public class ToDoListController : Controller
 	{
-		MyPortfolioContext context = new MyPortfolioContext();
+		private readonly MyPortfolioContext context;
+		public ToDoListController(MyPortfolioContext context)
+		{
+            this.context = context;
+        }
 		public IActionResult Index()
 		{
 			var values = context.ToDoLists.ToList();
