@@ -17,9 +17,13 @@ Shortly the website includes these sections:
 - SQL Server
 - Linq
 - Authorization
+- CRUD Operations
 - Admin Panel & Operations
 - Ajax
-- HTML, CSS, Javascript, Bootstrap
+- HTML
+- CSS
+- Javascript
+- Bootstrap
 - Contact Form
 - Responsive Design
 
