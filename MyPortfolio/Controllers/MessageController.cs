@@ -26,6 +26,7 @@ namespace MyPortfolio.Controllers
 			return View("~/Views/Shared/Components/_ContactComponentPartial/Default.cshtml");
 		}
         [HttpPost]
+	[AllowAnonymous]
         public IActionResult SendMessage(Message message)
         {
             if (ModelState.IsValid)
