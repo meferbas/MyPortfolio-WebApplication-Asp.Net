@@ -15,7 +15,7 @@ Shortly the website includes these sections:
 - Entity Framework Core ORM
 - C#
 - SQL Server
-- Linq
+- LINQ
 - Authorization
 - CRUD Operations
 - Admin Panel & Operations
@@ -29,7 +29,7 @@ Shortly the website includes these sections:
 
 ## Certificate
 
-This project was developed after completing the 'Enhance Your Portfolio with ASP.NET' course. You can view my certificate by [clicking here!](./mehmet-efe-erbaş-aspnet.pdf)
+This project was developed after completing the 'Build Your Portfolio with ASP.NET' course. You can view my certificate by [clicking here!](./mehmet-efe-erbaş-aspnet.pdf)
 
 
 # Images Of The Site
